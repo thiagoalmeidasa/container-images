@@ -6,6 +6,10 @@ concurrency:
   group: container-release
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  packages: write
+
 on:
   push:
     branches: ["main"]
