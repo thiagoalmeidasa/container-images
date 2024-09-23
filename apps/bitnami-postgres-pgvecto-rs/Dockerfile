@@ -1,6 +1,6 @@
 ARG PGVECTORS_TAG=pg16-v0.3.0-${TARGETARCH}
 
-ARG BITNAMI_TAG=16.4.0-debian-12-r9
+ARG BITNAMI_TAG=16.4.0-debian-12-r11
 
 
 FROM scratch as nothing
