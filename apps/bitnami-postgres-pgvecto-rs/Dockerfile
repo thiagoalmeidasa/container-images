@@ -20,4 +20,4 @@ USER 1001
 
 ENV POSTGRESQL_EXTRA_FLAGS="-c shared_preload_libraries=vectors.so"
 
-LABEL org.opencontainers.image.source="https://github.com/bitnami/containers/tree/main/bitnami/postgresql"
+LABEL org.opencontainers.image.source="https://github.com/thiagoalmeidasa/container-images/tree/main/apps/bitnami-postgres-pgvecto-rs"
