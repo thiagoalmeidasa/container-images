@@ -11,6 +11,10 @@ concurrency:
   group: ${{ github.head_ref }}-pr-validate
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   simple-checks:
     uses: thiagoalmeidasa/container-images/.github/workflows/simple-checks.yaml@main
