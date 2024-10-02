@@ -10,4 +10,3 @@ channels:
       type: cli
       env:
         - "ALLOW_EMPTY_PASSWORD=yes"
-        - "NADA=yes"
