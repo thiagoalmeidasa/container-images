@@ -2,9 +2,12 @@
 app: bitnami-postgres-pgvecto-rs
 semver: true
 channels:
-  - name: stable
+  - name: latest
     platforms: ["linux/amd64", "linux/arm64"]
     stable: true
     tests:
       enabled: true
       type: web
+      args:
+        - --env
+        - "ALLOW_EMPTY_PASSWORD=yes"
