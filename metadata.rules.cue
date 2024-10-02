@@ -11,7 +11,7 @@
     tests: {
         enabled: bool
         type?:   =~"^(cli|web)$"
-        env?: list
+        env?: [...string]
     }
 }
 
