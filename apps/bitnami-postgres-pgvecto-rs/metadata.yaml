@@ -7,7 +7,7 @@ channels:
     stable: true
     tests:
       enabled: true
-      type: web
-      args:
-        - --env
+      type: cli
+      env:
         - "ALLOW_EMPTY_PASSWORD=yes"
+        - "NADA=yes"
