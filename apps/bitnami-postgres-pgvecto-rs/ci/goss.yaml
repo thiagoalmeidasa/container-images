@@ -3,3 +3,6 @@
 file:
   /opt/bitnami/postgresql/lib/vectors.so:
     exists: true
+port:
+  tcp6:5432:
+    listening: true
