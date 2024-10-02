@@ -25,7 +25,7 @@ jobs:
   build-images:
     needs: ["simple-checks", "get-changed-images"]
     if: ${{ needs.get-changed-images.outputs.addedOrModified == 'true' }}
-    uses: thiagoalmeidasa/container-images/.github/workflows/build-images.yaml@update-renovate-config
+    uses: thiagoalmeidasa/container-images/.github/workflows/build-images.yaml@main
     secrets: inherit
     with:
       appsToBuild: "${{ needs.get-changed-images.outputs.addedOrModifiedImages }}"
