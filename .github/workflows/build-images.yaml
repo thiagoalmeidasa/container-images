@@ -221,7 +221,7 @@ jobs:
           else
               image_name="${{ steps.prepare-build-outputs.outputs.image_name }}"
           fi
-          dgoss run ${{matrix.image.goss_env}} ${image_name} ${{ matrix.image.goss_args }}
+          dgoss run ${{ matrix.image.goss_env }} ${image_name} ${{ matrix.image.goss_args }}
 
       - name: Export Digest
         id: export-digest
