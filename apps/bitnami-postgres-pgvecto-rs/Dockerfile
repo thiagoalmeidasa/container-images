@@ -1,6 +1,6 @@
 ARG PGVECTORS_TAG=pg16-v0.3.0-${TARGETARCH}
 
-ARG BITNAMI_TAG=16.4.0-debian-12-r14
+ARG BITNAMI_TAG=16.4.0-debian-12-r15
 
 FROM tensorchord/pgvecto-rs-binary:${PGVECTORS_TAG} AS binary
 
