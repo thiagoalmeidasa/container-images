@@ -14,11 +14,10 @@
     {
       "customType": "regex",
       "fileMatch": [
-      "ci/latest\\.(sh|py)$"
+      "ci/latest\\.(sh|py)$",
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\sVERSION=[\"']?(?<currentValue>.+?)[\"']?\\s"
-
+        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\sVERSION=[\"']?(?<currentValue>.+?)[\"']?\\s",
       ]
     }
   ],
@@ -57,6 +56,15 @@
       "matchUpdateTypes": ["patch"],
       "semanticCommitScope": "{{parentDir}}",
       "semanticCommitType": "fix"
+    },
+    {
+      "description": "bitnami/postgresql image",
+      "groupName": "bitnami/postgresql",
+      "matchDatasources": ["docker"],
+      "group": {
+        "commitMessageTopic": "{{{groupName}}} group"
+      },
+      "separateMultipleMajor": true
     }
   ]
 }

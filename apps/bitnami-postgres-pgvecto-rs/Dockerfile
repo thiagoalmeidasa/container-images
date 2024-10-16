@@ -1,6 +1,6 @@
 ARG PGVECTORS_TAG=pg16-v0.3.0-${TARGETARCH}
 
-ARG VERSION
+ARG VERSION=16.4.0-debian-12-r13
 
 FROM tensorchord/pgvecto-rs-binary:${PGVECTORS_TAG} AS binary
 
