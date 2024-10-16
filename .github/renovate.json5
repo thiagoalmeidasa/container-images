@@ -10,6 +10,17 @@
   ],
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+      "ci/latest\\.(sh|py)$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s(?:ENV|ARG)\\s+[A-Za-z0-9_]+?VERSION[ =][\"']?(?<currentValue>.+?)[\"']?\\s"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "addLabels": ["renovate/container", "type/major"],
@@ -19,7 +30,7 @@
       "commitMessageTopic": "{{depName}}",
       "labels": ["app/{{parentDir}}"],
       "matchDatasources": ["docker"],
-      "matchFileNames": ["apps/**/Dockerfile", "apps/**/ci/latest.sh"],
+      "matchFileNames": ["apps/**/Dockerfile"],
       "matchUpdateTypes": ["major"]
     },
     {
@@ -29,7 +40,7 @@
       "commitMessageTopic": "{{depName}}",
       "labels": ["app/{{parentDir}}"],
       "matchDatasources": ["docker"],
-      "matchFileNames": ["apps/**/Dockerfile", "apps/**/ci/latest.sh"],
+      "matchFileNames": ["apps/**/Dockerfile"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitScope": "{{parentDir}}",
       "semanticCommitType": "feat"
@@ -41,7 +52,7 @@
       "commitMessageTopic": "{{depName}}",
       "labels": ["app/{{parentDir}}"],
       "matchDatasources": ["docker"],
-      "matchFileNames": ["apps/**/Dockerfile", "apps/**/ci/latest.sh"],
+      "matchFileNames": ["apps/**/Dockerfile"],
       "matchUpdateTypes": ["patch"],
       "semanticCommitScope": "{{parentDir}}",
       "semanticCommitType": "fix"
