@@ -1,10 +1,10 @@
 ARG PGVECTORS_TAG=pg16-v0.3.0-${TARGETARCH}
 
-ARG BITNAMI_TAG
+ARG VERSION=16.4.0-debian-12-r13
 
 FROM tensorchord/pgvecto-rs-binary:${PGVECTORS_TAG} AS binary
 
-FROM docker.io/bitnami/postgresql:${BITNAMI_TAG}
+FROM docker.io/bitnami/postgresql:${VERSION}
 
 COPY --from=binary /pgvecto-rs-binary-release.deb /tmp/vectors.deb
 
