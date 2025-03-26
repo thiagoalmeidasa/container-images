@@ -55,6 +55,7 @@ Each Image will be built with a `rolling` tag, along with tags specific to it's 
 Container | Channel | Image
 --- | --- | ---
 [bitnami-postgres-pgvecto-rs](https://github.com/thiagoalmeidasa/container-images/pkgs/container/bitnami-postgres-pgvecto-rs) | latest | ghcr.io/thiagoalmeidasa/bitnami-postgres-pgvecto-rs
+[manjarolinux-distcc](https://github.com/thiagoalmeidasa/container-images/pkgs/container/manjarolinux-distcc) | latest | ghcr.io/thiagoalmeidasa/manjarolinux-distcc
 
 
 ## Deprecations
