@@ -1,6 +1,6 @@
 ARG VERSION
 
-FROM DOCKER_IMAGE=manjarolinux/base:${VERSION}
+FROM manjarolinux/base:${VERSION}
 
 ARG BUILD_DATE
 ARG VCS_REF
