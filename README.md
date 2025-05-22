@@ -56,6 +56,7 @@ Container | Channel | Image
 --- | --- | ---
 [bitnami-postgres-pgvecto-rs](https://github.com/thiagoalmeidasa/container-images/pkgs/container/bitnami-postgres-pgvecto-rs) | latest | ghcr.io/thiagoalmeidasa/bitnami-postgres-pgvecto-rs
 [bitnami-postgres-pgvecto-rs-vchord](https://github.com/thiagoalmeidasa/container-images/pkgs/container/bitnami-postgres-pgvecto-rs-vchord) | latest | ghcr.io/thiagoalmeidasa/bitnami-postgres-pgvecto-rs-vchord
+[bitnami-postgres-vchord](https://github.com/thiagoalmeidasa/container-images/pkgs/container/bitnami-postgres-vchord) | latest | ghcr.io/thiagoalmeidasa/bitnami-postgres-vchord
 [manjarolinux-distcc](https://github.com/thiagoalmeidasa/container-images/pkgs/container/manjarolinux-distcc) | latest | ghcr.io/thiagoalmeidasa/manjarolinux-distcc
 
 
