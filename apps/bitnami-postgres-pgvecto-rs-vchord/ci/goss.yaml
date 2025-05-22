@@ -10,12 +10,3 @@ file:
 port:
   tcp6:5432:
     listening: true
-command:
-  'create test database':
-    exit-status: 0
-    exec: "psql -h localhost -p 5432 -U postgres -c 'CREATE DATABASE IF NOT EXISTS test;'"
-    timeout: 2000  # in milliseconds
-  'activate extension':
-    exit-status: 0
-    exec: "psql -h localhost -p 5432 -U postgres -d test -c 'CREATE EXTENSION IF NOT EXISTS vchord CASCADE;'"
-    timeout: 2000  # in milliseconds
