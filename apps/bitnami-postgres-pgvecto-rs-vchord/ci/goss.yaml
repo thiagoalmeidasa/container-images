@@ -5,6 +5,17 @@ file:
     exists: true
   /opt/bitnami/postgresql/lib/vchord.so:
     exists: true
+  /opt/bitnami/postgresql/share/extension/vector.control:
+    exists: true
 port:
   tcp6:5432:
     listening: true
+command:
+  'create test database':
+    exit-status: 0
+    exec: "psql -h localhost -u postgres -c 'CREATE DATABASE test;'"
+    timeout: 1000  # in milliseconds
+  'activate extension':
+    exit-status: 0
+    exec: "psql -h localhost -u postgres -d test -c 'CREATE EXTENSION IF NOT EXISTS vchord CASCADE;'"
+    timeout: 1000  # in milliseconds
