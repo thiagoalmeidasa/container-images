@@ -5,6 +5,8 @@ file:
     exists: true
   /opt/bitnami/postgresql/lib/vchord.so:
     exists: true
+  /opt/bitnami/postgresql/share/extension/vector.control:
+    exists: true
 port:
   tcp6:5432:
     listening: true
