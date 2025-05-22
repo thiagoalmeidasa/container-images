@@ -1,0 +1,12 @@
+---
+app: bitnami-postgres-vchord
+semver: true
+channels:
+  - name: latest
+    platforms: ["linux/amd64", "linux/arm64"]
+    stable: true
+    tests:
+      enabled: true
+      type: web
+      env:
+        - "ALLOW_EMPTY_PASSWORD=yes"
