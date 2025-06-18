@@ -1,71 +1,111 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "docker:enableMajor",
-    ":dependencyDashboard",
-    ":disableRateLimiting",
-    ":timezone(Europe/Stockholm)",
-    ":semanticCommits"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    'docker:enableMajor',
+    ':dependencyDashboard',
+    ':disableRateLimiting',
+    ':timezone(Europe/Stockholm)',
+    ':semanticCommits',
   ],
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
-  "customManagers": [
+  dependencyDashboardTitle: 'Renovate Dashboard 🤖',
+  suppressNotifications: [
+    'prEditedNotification',
+    'prIgnoreNotification',
+  ],
+  customManagers: [
     {
-      "customType": "regex",
-      "fileMatch": [
-      "ci/latest\\.(sh|py)$",
+      customType: 'regex',
+      managerFilePatterns: [
+        '/ci/latest\\.(sh|py)$/',
       ],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\sVERSION=[\"']?(?<currentValue>.+?)[\"']?\\s",
-      ]
-    }
+      matchStrings: [
+        '# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\sVERSION=["\']?(?<currentValue>.+?)["\']?\\s',
+      ],
+    },
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "addLabels": ["renovate/container", "type/major"],
-      "additionalBranchPrefix": "{{parentDir}}-",
-      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )",
-      "commitMessagePrefix": "feat({{parentDir}})!: ",
-      "commitMessageTopic": "{{depName}}",
-      "labels": ["app/{{parentDir}}"],
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["apps/**/Dockerfile"],
-      "matchUpdateTypes": ["major"]
+      addLabels: [
+        'renovate/container',
+        'type/major',
+      ],
+      additionalBranchPrefix: '{{parentDir}}-',
+      commitMessageExtra: ' ( {{currentVersion}} → {{newVersion}} )',
+      commitMessagePrefix: 'feat({{parentDir}})!: ',
+      commitMessageTopic: '{{depName}}',
+      labels: [
+        'app/{{parentDir}}',
+      ],
+      matchDatasources: [
+        'docker',
+      ],
+      matchFileNames: [
+        'apps/**/Dockerfile',
+      ],
+      matchUpdateTypes: [
+        'major',
+      ],
     },
     {
-      "addLabels": ["renovate/container", "type/minor"],
-      "additionalBranchPrefix": "{{parentDir}}-",
-      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
-      "commitMessageTopic": "{{depName}}",
-      "labels": ["app/{{parentDir}}"],
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["apps/**/Dockerfile"],
-      "matchUpdateTypes": ["minor"],
-      "semanticCommitScope": "{{parentDir}}",
-      "semanticCommitType": "feat"
+      addLabels: [
+        'renovate/container',
+        'type/minor',
+      ],
+      additionalBranchPrefix: '{{parentDir}}-',
+      commitMessageExtra: '( {{currentVersion}} → {{newVersion}} )',
+      commitMessageTopic: '{{depName}}',
+      labels: [
+        'app/{{parentDir}}',
+      ],
+      matchDatasources: [
+        'docker',
+      ],
+      matchFileNames: [
+        'apps/**/Dockerfile',
+      ],
+      matchUpdateTypes: [
+        'minor',
+      ],
+      semanticCommitScope: '{{parentDir}}',
+      semanticCommitType: 'feat',
     },
     {
-      "addLabels": ["renovate/container", "type/patch"],
-      "additionalBranchPrefix": "{{parentDir}}-",
-      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
-      "commitMessageTopic": "{{depName}}",
-      "labels": ["app/{{parentDir}}"],
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["apps/**/Dockerfile"],
-      "matchUpdateTypes": ["patch"],
-      "semanticCommitScope": "{{parentDir}}",
-      "semanticCommitType": "fix"
+      addLabels: [
+        'renovate/container',
+        'type/patch',
+      ],
+      additionalBranchPrefix: '{{parentDir}}-',
+      commitMessageExtra: '( {{currentVersion}} → {{newVersion}} )',
+      commitMessageTopic: '{{depName}}',
+      labels: [
+        'app/{{parentDir}}',
+      ],
+      matchDatasources: [
+        'docker',
+      ],
+      matchFileNames: [
+        'apps/**/Dockerfile',
+      ],
+      matchUpdateTypes: [
+        'patch',
+      ],
+      semanticCommitScope: '{{parentDir}}',
+      semanticCommitType: 'fix',
     },
     {
-      "description": "bitnami/postgresql image",
-      "groupName": "bitnami/postgresql",
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["docker.io/bitnami/postgresql"],
-      "group": {
-        "commitMessageTopic": "{{{groupName}}} group"
+      description: 'bitnami/postgresql image',
+      groupName: 'bitnami/postgresql',
+      matchDatasources: [
+        'docker',
+      ],
+      matchPackageNames: [
+        'docker.io/bitnami/postgresql',
+      ],
+      group: {
+        commitMessageTopic: '{{{groupName}}} group',
       },
-      "separateMultipleMajor": true
-    }
-  ]
+      separateMultipleMajor: true,
+    },
+  ],
 }
