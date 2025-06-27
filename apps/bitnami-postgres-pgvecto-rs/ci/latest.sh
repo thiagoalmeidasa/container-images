@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # renovate: datasource=docker depName=docker.io/bitnami/postgresql
-VERSION="17.5.0-debian-12-r12"
+VERSION="17.5.0-debian-12-r13"
 printf '%s' "${VERSION}"
