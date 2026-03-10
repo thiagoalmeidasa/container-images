@@ -31,7 +31,7 @@ jobs:
           token: "${{ steps.app-token.outputs.token }}"
 
       - name: Setup Homebrew
-        uses: Homebrew/actions/setup-homebrew@ac2ec1ccabf33716b2fe5f4d467e250296951780 # master
+        uses: Homebrew/actions/setup-homebrew@5b5b9415990a48a7938310ab90c4964bfcb42e89 # master
 
       - name: Setup Workflow Tools
         shell: bash
